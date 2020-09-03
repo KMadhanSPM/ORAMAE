@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #fff;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0 1em;
+  width: 100%;
+}
+
+.App {
+  text-align: center;
+  background: #fff;
+
+  //Adding Leader Button
+  .add {
+    font-size: 22px;
+    font-weight: bold;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid #bbb;
+    background: #eee;
+  }
+
+  //LeaderBoard
+  .leaderboard {
+    border: 1px solid #bbb;
+    //Leader Name and Points
+    table {
+      .name{
+        width: 50%;
+        font-weight: bold;
+        color: #333;
+      }
+      .point{
+        width: 30%;
+        color: #0074f4;
+        font-weight: bold;
+      }
+      td {
+        background-color: #eee;
+        //Point Value Increment and Decrement Button
+        .input-group {
+          width: 100%;
+          position: relative;
+          display: table;
+          border-collapse: separate;
+          button {
+            border: 0;
+            padding: 9px 8px;
+            box-shadow: none;
+            width: 50%;
+            position: relative;
+            i {
+              position: absolute;
+              top: 2px;
+              left: 4px;
+              color: #666;
+            }
+          }
+        }
+      }
+    }
+  }
+}
