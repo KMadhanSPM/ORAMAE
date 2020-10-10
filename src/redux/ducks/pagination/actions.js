@@ -1,8 +1,8 @@
-import {PAGE_NUMBER} from './types';
+import {PAGE_DATA} from './types';
 
-export const currentPageNumber = (page_number) => {
+export const currentPageNumber = (pageData) => {
     return{
-        type: PAGE_NUMBER,
-        page_number
+        type: PAGE_DATA,
+        pageData
     }
 }

@@ -1,10 +1,9 @@
-import {PAGE_NUMBER} from './types';
+import {PAGE_DATA} from './types';
 
-export default (state={page_number: []}, action) => {
+export default (state={pageData: []}, action) => {
 
-   if(action.type === PAGE_NUMBER){
-
-       state.page_number = action.page_number;
+   if(action.type === PAGE_DATA){
+       state.pageData = action.pageData;
        return{...state};
    }
 

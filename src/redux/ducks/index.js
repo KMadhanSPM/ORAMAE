@@ -1,1 +1,1 @@
-export {default as page_number}  from './pagination';
+export {default as pageData}  from './pagination';

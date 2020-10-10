@@ -43,20 +43,20 @@ class Leaderboard extends Component {
             title: "accusamus beatae ad facilis cum similique qui sunt",
             url: "https://via.placeholder.com/600/92c952"
         }
-        this.props.page_number.push(newData)
-        this.props.updateDataValue(this.props.page_number);
+        this.props.pageData.push(newData)
+        this.props.updateDataValue(this.props.pageData);
         this.setState({
-            endData: this.props.page_number.length
+            endData: this.props.pageData.length
         })
 
     }
     handleEdit = (e, item, key) => {
-        const objIndex = this.props.page_number.findIndex(stone => stone == item)
-        this.props.page_number[objIndex].key = e.target.value
-        this.props.updateDataValue(this.props.page_number);
+        const objIndex = this.props.pageData.findIndex(stone => stone == item)
+        this.props.pageData[objIndex].key = e.target.value
+        this.props.updateDataValue(this.props.pageData);
     }
     handleDelete = (e, item) => {
-        const removedValue = this.props.page_number.filter(key => key != item);
+        const removedValue = this.props.pageData.filter(key => key != item);
         this.props.updateDataValue(removedValue);
     }
 
@@ -71,7 +71,7 @@ class Leaderboard extends Component {
     handleNext = (e) => {
         this.setState({
             startData: this.state.startData + 5,
-            endData: this.props.page_number.length < this.state.endData + 5 ? 5 : this.state.endData + 5
+            endData: this.props.pageData.length < this.state.endData + 5 ? 5 : this.state.endData + 5
         })
     }
 
@@ -95,7 +95,7 @@ class Leaderboard extends Component {
                         </thead>
                         <tbody>
                             {
-                                this.props.page_number.length != 0 ? this.props.page_number.map((item, index) => {
+                                this.props.pageData.length != 0 ? this.props.pageData.map((item, index) => {
                                     return (
                                         <tr key={index}>
                                             <td><input value={item.albumId} onChange={(e) => this.handleEdit(e, item, 'albumId')} /></td>
@@ -123,7 +123,7 @@ class Leaderboard extends Component {
 }
 
 const mapStateToProps = state => ({
-    ...state.page_number
+    ...state.pageData
 });
 
 const mapDispatchToProps = dispatch => ({
